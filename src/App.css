@@ -2,19 +2,25 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 header {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.98);
   padding: 2rem 1rem;
   text-align: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
 }
 
 header h1 {
-  color: #667eea;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 1rem;
   font-size: 2.5rem;
+  letter-spacing: -0.5px;
 }
 
 main {
@@ -67,25 +73,27 @@ main {
 }
 
 .filter-bar button {
-  padding: 0.75rem 1.5rem;
-  border: 2px solid #ddd;
-  background: white;
-  border-radius: 5px;
+  padding: 0.8rem 1.6rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
-  color: #666;
+  color: white;
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .filter-bar button:hover {
-  border-color: #667eea;
-  color: #667eea;
+  border-color: white;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .filter-bar button.active {
-  background: #667eea;
-  color: white;
-  border-color: #667eea;
+  background: white;
+  color: #667eea;
+  border-color: white;
+  font-weight: 700;
 }
 
 .quote-display-container {
@@ -105,19 +113,27 @@ main {
 /* Quote Card */
 .quote-card {
   background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
   max-width: 600px;
   width: 100%;
+  border-left: 5px solid #667eea;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.quote-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 50px rgba(102, 126, 234, 0.3);
 }
 
 .quote-text {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-style: italic;
   color: #333;
-  margin-bottom: 1rem;
-  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  font-weight: 500;
 }
 
 .quote-author {
@@ -157,21 +173,25 @@ main {
 }
 
 .new-quote-btn {
-  padding: 0.75rem 2rem;
-  background: #667eea;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border: none;
-  border-radius: 5px;
-  font-size: 1rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
 .new-quote-btn:hover {
-  background: #764ba2;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.new-quote-btn:active {
+  transform: translateY(-1px);
 }
 
 /* Add Quote Page */
