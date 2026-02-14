@@ -49,6 +49,32 @@ public class QuotesController : ControllerBase
         return Ok(dtos);
     }
 
+    // GET: /quotes/random
+    // Returns a random quote
+    [HttpGet("random")]
+    public async Task<ActionResult<QuoteDto>> GetRandomQuote()
+    {
+        var quotes = await _context.Quotes.Include(q => q.Category).ToListAsync();
+        
+        if (quotes.Count == 0)
+        {
+            return NotFound("No quotes available.");
+        }
+
+        var random = new Random();
+        var randomQuote = quotes[random.Next(quotes.Count)];
+
+        var dto = new QuoteDto
+        {
+            Id = randomQuote.Id,
+            Text = randomQuote.Text,
+            Author = randomQuote.Author,
+            Category = randomQuote.Category!.Name
+        };
+
+        return Ok(dto);
+    }
+
     // POST: /quotes
     // Body: { "text": "...", "author": "...", "category": "funny" }
     [HttpPost]
