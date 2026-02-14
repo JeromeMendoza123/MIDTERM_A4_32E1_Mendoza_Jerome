@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getAllQuotes, getQuotesByCategory } from '../api/quoteService';
+import { getAllQuotes, getQuotesByCategory, getRandomQuote } from '../api/quoteService';
 import QuoteCard from '../components/QuoteCard';
 import FilterBar from '../components/FilterBar';
 
@@ -50,16 +50,14 @@ const Home = () => {
     fetchQuotes();
   }, [category]);
 
-  const pickRandomQuote = () => {
-    console.log('Picking random quote from:', quotes);
-    if (quotes.length === 0) {
-      console.warn('No quotes available');
-      return;
+  const pickRandomQuote = async () => {
+    try {
+      const quote = await getRandomQuote();
+      setRandomQuote(quote);
+    } catch (error) {
+      console.error("Failed to fetch random quote:", error);
+      setError("Failed to fetch random quote");
     }
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    const newQuote = quotes[randomIndex];
-    console.log('New random quote:', newQuote);
-    setRandomQuote(newQuote);
   };
 
   return (

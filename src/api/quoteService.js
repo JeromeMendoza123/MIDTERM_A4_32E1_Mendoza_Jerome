@@ -24,6 +24,27 @@ export const getAllQuotes = async () => {
   }
 };
 
+// Fetch a random quote
+export const getRandomQuote = async () => {
+  try {
+    console.log('Fetching random quote from:', `${API_URL}/random`);
+    const response = await fetch(`${API_URL}/random`);
+    console.log('Response status:', response.status);
+    
+    if (!response.ok) {
+      throw new Error(`Network response was not ok: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    console.log('Random quote:', data);
+    
+    return data;
+  } catch (error) {
+    console.error("Error fetching random quote:", error);
+    throw error;
+  }
+};
+
 // Fetch by category
 export const getQuotesByCategory = async (category) => {
   try {
