@@ -1,0 +1,64 @@
+{
+  "quotes": [
+    {
+      "id": "1",
+      "text": "Code is like humor. When you have to explain it, it's bad.",
+      "author": "Cory House",
+      "category": "funny"
+    },
+    {
+      "id": "2",
+      "text": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+      "author": "Martin Fowler",
+      "category": "sweet"
+    },
+    {
+      "id": "3",
+      "text": "First, solve the problem. Then, write the code.",
+      "author": "John Johnson",
+      "category": "dark"
+    },
+    {
+      "id": "4",
+      "text": "Why do Java developers wear glasses? Because they don't C#.",
+      "author": "Programming Humor",
+      "category": "sarcastic"
+    },
+    {
+      "id": "5",
+      "text": "The only way to do great work is to love what you do.",
+      "author": "Steve Jobs",
+      "category": "sweet"
+    },
+    {
+      "id": "ddc1",
+      "text": "Life is short, Live life to the fullest",
+      "author": "No name",
+      "category": "dark"
+    },
+    {
+      "id": "7105",
+      "text": "Yeah Strawberries",
+      "author": "NOne",
+      "category": "sweet"
+    },
+    {
+      "id": "d724",
+      "text": "Bury the light deep within",
+      "author": "Alpha and Omega",
+      "category": "dark"
+    },
+    {
+      "id": "6969",
+      "text": "Life is a Highway",
+      "author": "Lightning Mcqueen",
+      "category": "sarcastic"
+    },
+    {
+      "id": "1638",
+      "text": "Bonito Flakes",
+      "author": "Salmon Man",
+      "category": "sarcastic"
+    }
+  ]
+}
